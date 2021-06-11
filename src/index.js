@@ -1,5 +1,5 @@
-import Game from './scenes/game';
 import Phaser from 'phaser';
+import Game from './scenes/game';
 import TitleScreen from './scenes/titleScreen';
 
 /** @type {Phaser.Types.Core.GameConfig}
