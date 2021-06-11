@@ -8,7 +8,7 @@ Simple 2 player tennis game where players on the same computer use keyboard keys
 
 ## Live Demo
 
-Check the [live version]() of the app!
+Check the [live version](http://emanuel-okello.me/tennis/) of the app!
 
 
 ## Getting Started
@@ -44,7 +44,7 @@ It should open the server on port 8080 on localhost
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page]().
+Feel free to check the [issues page](https://github.com/oxenprogrammer/tennis/issues).
 
 ## Show your support
 
