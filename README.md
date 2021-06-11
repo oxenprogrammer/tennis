@@ -1,21 +1,14 @@
-## Obudde
-Obudde is a Luganda word for Weather. This project demonstrate
-1. Vanilla JavaScript DOM manipulation.
-2. Simple Webpack setup as a bundler. 
-3. Using the Fetch API
-4. Using Async Await 
-5. Modular Code Organization
+## Tennis
+Simple 2 player tennis game where players on the same computer use keyboard keys to control their paddle and hit the ball.
 
 ## Built With
 
-- Open Weather API
-- JavaScript
-- HTML5
-- Scss (CSS3)
+- Phaser Game Library
+- ES6 JavaScript
 
 ## Live Demo
 
-Check the [live version](http://emanuel-okello.me/obudde/) of the app!
+Check the [live version](http://emanuel-okello.me/tennis/) of the app!
 
 
 ## Getting Started
@@ -34,7 +27,7 @@ To get a local copy up and running follow these simple example steps.
 - open a terminal and `cd` to the cloned repository
 - Replace `config.example.json` value with your open weather API key, otherwise it will fail.
 - run `yarn` to install the dependencies
-- run `yarn run dev:build` to run in `development mode` or `yarn run build` to run in `production mode`
+- run `yarn run start` to run in `development mode` or `yarn run build` to run in `production mode`
 It should open the server on port 8080 on localhost
 
 
@@ -51,7 +44,7 @@ It should open the server on port 8080 on localhost
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/oxenprogrammer/obudde/issues).
+Feel free to check the [issues page](https://github.com/oxenprogrammer/tennis/issues).
 
 ## Show your support
 
