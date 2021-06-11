@@ -1,6 +1,11 @@
 import Phaser from 'phaser';
 
 export default class Game extends Phaser.Scene {
+  init() {
+    this.leftScore = 0;
+    this.rightScore = 0;
+  }
+
   paddleLeft;
 
   paddleRight;
@@ -10,6 +15,14 @@ export default class Game extends Phaser.Scene {
   leftKey;
 
   ball;
+
+  leftScore;
+
+  rightScore;
+
+  leftScoreLabel;
+
+  rightScoreLabel;
 
   preload() {}
 
@@ -32,6 +45,14 @@ export default class Game extends Phaser.Scene {
 
     this.cursors = this.input.keyboard.createCursorKeys();
     this.leftKey = this.input.keyboard;
+
+    this.leftScoreLabel = this.add.text(200, 24, '0');
+    this.leftScoreLabel.setColor('blue');
+    this.leftScoreLabel.setFontSize(36);
+
+    this.rightScoreLabel = this.add.text(600, 24, '0');
+    this.rightScoreLabel.setColor('red');
+    this.rightScoreLabel.setFontSize(36);
   }
 
   update() {
@@ -61,12 +82,24 @@ export default class Game extends Phaser.Scene {
     }
 
     if (this.ball.x < -30) {
+      this.incrementRightScore();
       this.resetBall();
     }
 
     if (this.ball.x > 830) {
+      this.incrementLeftScore();
       this.resetBall();
     }
+  }
+
+  incrementLeftScore() {
+    this.leftScore += 1;
+    this.leftScoreLabel.text = `Score: ${this.leftScore.toString()}`;
+  }
+
+  incrementRightScore() {
+    this.rightScore += 1;
+    this.rightScoreLabel.text = `Score: ${this.rightScore.toString()}`;
   }
 
   resetBall() {
