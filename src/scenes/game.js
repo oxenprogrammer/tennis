@@ -103,7 +103,7 @@ export default class Game extends Phaser.Scene {
   resetBall() {
     this.ball.setPosition(400, 250);
     const angle = Phaser.Math.Between(10, 360);
-    const vector = this.physics.velocityFromAngle(angle, 300);
+    const vector = this.physics.velocityFromAngle(angle, 400);
     this.ball.body.setVelocity(vector.x, vector.y);
   }
 }

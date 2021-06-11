@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev:build": "webpack serve --mode development",
+    "start": "webpack serve --mode development",
     "build": "webpack --mode production",
     "format": "prettier --write 'src/**/*.{js,ts,tsx}'",
     "deploy": "yarn webpack --mode production && git subtree push --prefix dist  -f origin gh-pages"
