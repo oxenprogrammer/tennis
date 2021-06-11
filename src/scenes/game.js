@@ -24,8 +24,6 @@ export default class Game extends Phaser.Scene {
 
   rightScoreLabel;
 
-  preload() {}
-
   create() {
     this.physics.world.setBounds(-100, 0, 1000, 500);
     this.ball = this.add.circle(400, 250, 10, 0xffffff, 1);
