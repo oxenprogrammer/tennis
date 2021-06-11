@@ -15,7 +15,10 @@ export default class Game extends Phaser.Scene {
     const ball = this.add.circle(400, 250, 10, 0xffffff, 1);
     this.physics.add.existing(ball);
     ball.body.setCollideWorldBounds(true, 1, 1);
-    ball.body.setVelocity(-200, 0);
+
+    const angle = Phaser.Math.Between(10, 360);
+    const vector = this.physics.velocityFromAngle(angle, 300);
+    ball.body.setVelocity(vector.x, vector.y);
     ball.body.setBounce(1, 1);
 
     this.paddleLeft = this.add.rectangle(30, 250, 25, 100, 0x0000ff, 1);
