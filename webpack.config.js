@@ -46,13 +46,6 @@ module.exports = {
         test: /\.(png|jpg|jpeg|gif|svg|webp)$/i,
         type: 'asset/resource',
       },
-      {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
-          'file-loader',
-          'webfontloader',
-        ],
-      },
     ],
   },
 };
