@@ -49,18 +49,8 @@ export default class Game extends Phaser.Scene {
     this.physics.add.collider(this.paddleLeft, this.ball);
     this.physics.add.collider(this.paddleRight, this.ball);
 
-    this.cursors = this.input.keyboard.createCursorKeys();
-    this.leftKey = this.input.keyboard;
-
-    this.leftScoreLabel = this.add.text(100, 24, '0');
-    this.leftScoreLabel.setColor('blue');
-    this.leftScoreLabel.setFontSize(24);
-    this.leftScoreLabel.setFontFamily('"Press Start 2P"');
-
-    this.rightScoreLabel = this.add.text(500, 24, '0');
-    this.rightScoreLabel.setColor('red');
-    this.rightScoreLabel.setFontSize(24);
-    this.rightScoreLabel.setFontFamily('"Press Start 2P"');
+    this.leftPaddle();
+    this.rightPaddle();
   }
 
   update() {
@@ -98,6 +88,24 @@ export default class Game extends Phaser.Scene {
       this.incrementLeftScore();
       this.resetBall();
     }
+  }
+
+  leftPaddle() {
+    this.leftKey = this.input.keyboard;
+
+    this.leftScoreLabel = this.add.text(100, 24, '0');
+    this.leftScoreLabel.setColor('blue');
+    this.leftScoreLabel.setFontSize(24);
+    this.leftScoreLabel.setFontFamily('"Press Start 2P"');
+  }
+
+  rightPaddle() {
+    this.cursors = this.input.keyboard.createCursorKeys();
+
+    this.rightScoreLabel = this.add.text(500, 24, '0');
+    this.rightScoreLabel.setColor('red');
+    this.rightScoreLabel.setFontSize(24);
+    this.rightScoreLabel.setFontFamily('"Press Start 2P"');
   }
 
   incrementLeftScore() {
