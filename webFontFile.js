@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/no-unresolved
 import Phaser from 'phaser';
+// eslint-disable-next-line import/no-unresolved
 import WebFontLoader from 'webfontloader';
 
 export default class WebFontFile extends Phaser.Loader.File {
