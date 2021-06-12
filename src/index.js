@@ -1,6 +1,7 @@
-// eslint-disable-next-line import/no-unresolved
 import Phaser from 'phaser';
 import Game from './scenes/game';
+import GameBackground from './scenes/gameBackground';
+// eslint-disable-next-line import/no-unresolved
 
 /** @type {Phaser.Types.Core.GameConfig}
  * {width} number
@@ -23,4 +24,5 @@ const config = {
 
 const game = new Phaser.Game(config);
 game.scene.add('game', Game);
+game.scene.add('game-background', GameBackground);
 game.scene.start('game');
