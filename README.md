@@ -1,5 +1,11 @@
 ## Tennis
 Simple 2 player tennis game where players on the same computer use keyboard keys to control their paddle and hit the ball.
+Blue player uses `W` and `S` keys to move up and down respectively, whilst the Red player uses `Up Arrow` and `Down Arrow`
+keys to move up and down respectively.
+
+## Screenshot
+
+![screenshot](./Screenshot.png)
 
 ## Built With
 

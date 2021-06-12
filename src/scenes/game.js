@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/no-unresolved
 import Phaser from 'phaser';
+import WebFontFile from '../../webFontFile';
 
 export default class Game extends Phaser.Scene {
   init() {
@@ -25,13 +26,22 @@ export default class Game extends Phaser.Scene {
 
   rightScoreLabel;
 
+  preload() {
+    const fonts = new WebFontFile(this.load, 'Press Start 2P');
+    this.load.addFile(fonts);
+  }
+
   create() {
+    this.scene.run('game-background');
     this.physics.world.setBounds(-100, 0, 1000, 500);
     this.ball = this.add.circle(400, 250, 10, 0xffffff, 1);
     this.physics.add.existing(this.ball);
     this.ball.body.setCollideWorldBounds(true, 1, 1);
 
-    this.resetBall();
+    this.time.delayedCall(2000, () => {
+      this.resetBall();
+    });
+
     this.ball.body.setBounce(1, 1);
 
     this.paddleLeft = this.add.rectangle(30, 250, 25, 100, 0x0000ff, 1);
@@ -42,16 +52,8 @@ export default class Game extends Phaser.Scene {
     this.physics.add.collider(this.paddleLeft, this.ball);
     this.physics.add.collider(this.paddleRight, this.ball);
 
-    this.cursors = this.input.keyboard.createCursorKeys();
-    this.leftKey = this.input.keyboard;
-
-    this.leftScoreLabel = this.add.text(200, 24, '0');
-    this.leftScoreLabel.setColor('blue');
-    this.leftScoreLabel.setFontSize(36);
-
-    this.rightScoreLabel = this.add.text(600, 24, '0');
-    this.rightScoreLabel.setColor('red');
-    this.rightScoreLabel.setFontSize(36);
+    this.leftPaddle();
+    this.rightPaddle();
   }
 
   update() {
@@ -89,6 +91,24 @@ export default class Game extends Phaser.Scene {
       this.incrementLeftScore();
       this.resetBall();
     }
+  }
+
+  leftPaddle() {
+    this.leftKey = this.input.keyboard;
+
+    this.leftScoreLabel = this.add.text(100, 24, '0');
+    this.leftScoreLabel.setColor('blue');
+    this.leftScoreLabel.setFontSize(24);
+    this.leftScoreLabel.setFontFamily('"Press Start 2P"');
+  }
+
+  rightPaddle() {
+    this.cursors = this.input.keyboard.createCursorKeys();
+
+    this.rightScoreLabel = this.add.text(500, 24, '0');
+    this.rightScoreLabel.setColor('red');
+    this.rightScoreLabel.setFontSize(24);
+    this.rightScoreLabel.setFontFamily('"Press Start 2P"');
   }
 
   incrementLeftScore() {

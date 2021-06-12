@@ -10,7 +10,7 @@
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
     "format": "prettier --write 'src/**/*.{js,ts,tsx}'",
-    "deploy": "yarn webpack --mode production && git subtree push --prefix dist  -f origin gh-pages"
+    "deploy": "yarn webpack --mode production && git subtree push --prefix dist origin gh-pages"
   },
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.14.0",
@@ -18,6 +18,7 @@
     "eslint": "^7.26.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.2",
+    "file-loader": "^6.2.0",
     "prettier": "2.3.0",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
@@ -34,12 +35,14 @@
     "@babel/runtime": "^7.14.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.5",
+    "font-awesome": "^4.7.0",
     "html-webpack-plugin": "^5.3.1",
     "phaser": "^3.55.2",
     "regenerator-runtime": "^0.13.7",
     "sass": "^1.33.0",
     "sass-loader": "^11.1.1",
     "style-loader": "^2.0.0",
-    "url-loader": "^4.1.1"
+    "url-loader": "^4.1.1",
+    "webfontloader": "^1.6.28"
   }
 }
