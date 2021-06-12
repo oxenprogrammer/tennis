@@ -38,7 +38,10 @@ export default class Game extends Phaser.Scene {
     this.physics.add.existing(this.ball);
     this.ball.body.setCollideWorldBounds(true, 1, 1);
 
-    this.resetBall();
+    this.time.delayedCall(2000, () => {
+      this.resetBall();
+    });
+
     this.ball.body.setBounce(1, 1);
 
     this.paddleLeft = this.add.rectangle(30, 250, 25, 100, 0x0000ff, 1);

@@ -4,6 +4,7 @@ import './style/main.scss';
 import Phaser from 'phaser';
 import Game from './scenes/game';
 import GameBackground from './scenes/gameBackground';
+import TitleScreen from './scenes/titleScreen';
 
 /** @type {Phaser.Types.Core.GameConfig}
  * {width} number
@@ -29,13 +30,15 @@ const index = () => {
   const game = new Phaser.Game(config);
   game.scene.add('game', Game);
   game.scene.add('game-background', GameBackground);
-  game.scene.start('game');
+  game.scene.add('title', TitleScreen);
+  game.scene.start('title');
+  // game.scene.start('game');
 };
 
 const { body } = document;
 const heading = document.createElement('h1');
 heading.setAttribute('class', 'heading');
-heading.textContent = "Legend's Tennis";
+heading.textContent = 'Tennis Masters Tour';
 
 body.appendChild(heading);
 body.appendChild(index());
